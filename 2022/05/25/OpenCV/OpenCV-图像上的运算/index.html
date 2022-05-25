@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | </title>
+  <title>OpenCV-图像上的运算 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="OpenCV-图像上的运算学习记录相关代码解析：  cv.addWeighted() bitwise_and()     bitwise_or()    bitwise_not()   bitwise_xor() cv.threshold()学习代码如下：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenCV-图像上的运算">
+<meta property="og:url" content="http://example.com/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E4%B8%8A%E7%9A%84%E8%BF%90%E7%AE%97/index.html">
 <meta property="og:site_name">
+<meta property="og:description" content="OpenCV-图像上的运算学习记录相关代码解析：  cv.addWeighted() bitwise_and()     bitwise_or()    bitwise_not()   bitwise_xor() cv.threshold()学习代码如下：">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-25T10:06:34.685Z">
+<meta property="article:modified_time" content="2022-05-07T10:09:33.148Z">
 <meta property="article:author" content="Yuzzz">
 <meta name="twitter:card" content="summary">
   
@@ -153,295 +157,195 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-OpenCV/OpenCV-图像上的运算" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      OpenCV-图像上的运算
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+  <br/>
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+  <span class="icon-sort"></span>
+  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+  </span>
+  </a>
+
+<!--显示阅读次数完毕-->
+
+        
+        <a href="/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E4%B8%8A%E7%9A%84%E8%BF%90%E7%AE%97/" class="archive-article-date">
+  	<time datetime="2022-05-25T10:06:34.685Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="OpenCV-图像上的运算学习记录"><a href="#OpenCV-图像上的运算学习记录" class="headerlink" title="OpenCV-图像上的运算学习记录"></a>OpenCV-图像上的运算学习记录</h1><p>相关代码解析：</p>
+<ol>
+<li>cv.addWeighted()</li>
+<li>bitwise_and()     bitwise_or()    bitwise_not()   bitwise_xor()</li>
+<li>cv.threshold()<br>学习代码如下：<span id="more"></span>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import cv2 as cv</span><br><span class="line"></span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">处理图像运算</span><br><span class="line">OpenCV加法和Numpy加法之间有区别：</span><br><span class="line">OpenCV加法是饱和运算，而Numpy加法是模运算。</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">x = np.uint8([250])</span><br><span class="line">y = np.uint8([10])</span><br><span class="line">print(cv.add(x, y))  # 250 + 10 = 260 -&gt; 255, np像素数组溢出自动变成255（满像素）</span><br><span class="line">print(x + y)  # 250 + 10 = 260 % 256 = 4</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">图像融合</span><br><span class="line">这也是图像加法，但是对图像赋予不同的权重，以使其具有融合或透明的感觉。</span><br><span class="line">根据以下等式添加图像:</span><br><span class="line">G(x) = (1−α) * f0(x) + α * f1(x)</span><br><span class="line">通过从 α 从 0→1更改，您可以在一个图像到另一个图像之间执行很酷的过渡。</span><br><span class="line">********** PS: 融合的两幅图片分辨率大小和通道需要相同 ************</span><br><span class="line">在这里，我拍摄了两个图像，将它们融合在一起。第一幅图像的权重为0.7，第二幅图像的权重为0.3。</span><br><span class="line">cv.addWeighted()在图像上应用以下公式:</span><br><span class="line">dst = α * img1 + β * img2 + γ</span><br><span class="line">在这里，γ 被视为零。</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line"># 图像融合例子</span><br><span class="line">img1 = cv.imread(r&#x27;C:\Users\Admin\Desktop\opencv\jumao-002.jpg&#x27;)</span><br><span class="line">img2 = cv.imread(r&#x27;C:\Users\Admin\Desktop\opencv\jumao-001.jpg&#x27;)</span><br><span class="line">dst = cv.addWeighted(img1, 0.2, img2, 0.8, 0)</span><br><span class="line">cv.imshow(&#x27;dst&#x27;, dst)</span><br><span class="line">cv.waitKey(0)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line"></span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">按位运算</span><br><span class="line">这包括按位 AND、 OR、NOT 和 XOR 操作。</span><br><span class="line">bitwise_and bitwise_or  bitwise_not bitwise_xor</span><br><span class="line">它们在提取图像的任何部分(我们将在后面的章节中看到)、定义和处理非矩形 ROI 等方面非常有用。</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line"># 加载两张图片</span><br><span class="line">image1 = cv.imread(r&#x27;C:\Users\Admin\Desktop\opencv\roi.jpg&#x27;)</span><br><span class="line">image2 = cv.imread(r&#x27;C:\Users\Admin\Desktop\opencv\jumao-001.jpg&#x27;)</span><br><span class="line">print(image2.shape)</span><br><span class="line">print(image2)           # 最外围矩阵[]表示图像像素矩阵，[[]]:内层矩阵表示第几行，[[[]]]:最内层矩阵表示RGB值和第几列</span><br><span class="line">print(image2[0, 0])     # [31 36 37]</span><br><span class="line">print(image2[1, 0])     # [34 39 40]</span><br><span class="line">print(image2[0, 279])   # [20 21 17]</span><br><span class="line">print(image2[185, 279])  # [67 99 128]</span><br><span class="line">print(image2[0, 0, 0])      # 读取图像第0行第0列像素点BGR中的Blue值：31</span><br><span class="line">print(image2.item(0, 0, 0))     # 读取图像第0行第0列像素点BGR中的Blue值：31</span><br><span class="line"># 我想把image2放在左上角，所以我创建了ROI</span><br><span class="line">rows, cols, channels = image2.shape</span><br><span class="line">roi = image1[0:rows, 0:cols]</span><br><span class="line"># 现在创建image2的掩膜（mask），并同时创建其相反掩膜（mask）</span><br><span class="line">image2gray = cv.cvtColor(image2, cv.COLOR_BGR2GRAY)</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">图像二值化：</span><br><span class="line">定义：图像的二值化，就是将图像上的像素点的灰度值设置为0或255，</span><br><span class="line">也就是将整个图像呈现出明显的只有黑和白的视觉效果。</span><br><span class="line">灰度值0：黑  灰度值255：白</span><br><span class="line">一幅图像包括目标物体、背景还有噪声，要想从多值的数字图像中直接提取出目标物体，</span><br><span class="line">常用的方法就是设定一个阈值T，用T将图像的数据分成两部分：</span><br><span class="line">大于T的像素群和小于T的像素群。</span><br><span class="line">这是研究灰度变换的最特殊的方法，称为图像的二值化（Binarization）。</span><br><span class="line"></span><br><span class="line">retval, dst = cv.threshold( src, thresh, maxval, type[, dst] ) </span><br><span class="line">参数说明：</span><br><span class="line">src：原图像。</span><br><span class="line">dst：结果图像。</span><br><span class="line">thresh：当前阈值。</span><br><span class="line">maxVal：最大阈值，一般为255.</span><br><span class="line">thresholdType:阈值类型，主要有下面几种：</span><br><span class="line">enum ThresholdTypes &#123;</span><br><span class="line">    THRESH_BINARY     = 0,  大于阈值的部分被置为255，小于部分被置为0</span><br><span class="line">    THRESH_BINARY_INV = 1,  大于阈值部分被置为0，小于部分被置为255</span><br><span class="line">    THRESH_TRUNC      = 2,  大于阈值部分被置为threshold，小于部分保持原样</span><br><span class="line">    THRESH_TOZERO     = 3,  小于阈值部分被置为0，大于部分保持不变</span><br><span class="line">    THRESH_TOZERO_INV = 4,  大于阈值部分被置为0，小于部分保持不变 </span><br><span class="line">    THRESH_MASK       = 7,</span><br><span class="line">    THRESH_OTSU       = 8,</span><br><span class="line">    THRESH_TRIANGLE   = 16</span><br><span class="line">&#125;;</span><br><span class="line">返回值:</span><br><span class="line">retval： 与参数thresh一致</span><br><span class="line">dst： 结果图像</span><br><span class="line">使用了THRESH_OTSU和THRESH_TRIANGLE两个标志时，输入图像必须为单通道。</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">ret, mask = cv.threshold(image2gray, 150, 255, cv.THRESH_BINARY)</span><br><span class="line">cv.imshow(&#x27;mask&#x27;, mask)</span><br><span class="line">mask_inv = cv.bitwise_not(mask)</span><br><span class="line">cv.imshow(&#x27;mask_inv&#x27;, mask_inv)</span><br><span class="line"># 现在将ROI中logo的区域涂黑</span><br><span class="line">image1_bg = cv.bitwise_and(roi, roi, mask=mask_inv)</span><br><span class="line">cv.imshow(&#x27;image1_bg&#x27;, image1_bg)</span><br><span class="line"># 仅从logo图像中提取logo区域</span><br><span class="line">image2_fg = cv.bitwise_and(image2, image2, mask=mask)</span><br><span class="line">cv.imshow(&#x27;image2_fg&#x27;, image2_fg)</span><br><span class="line"># 将logo放入ROI并修改主图像</span><br><span class="line">dst = cv.add(image1_bg, image2_fg)</span><br><span class="line">cv.imshow(&#x27;dst&#x27;, dst)</span><br><span class="line">image1[0:rows, 0:cols] = dst</span><br><span class="line">cv.imshow(&#x27;res&#x27;, image1)</span><br><span class="line">cv.waitKey(0)</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢观看<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E6%A2%AF%E5%BA%A6/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:13:46.434Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E6%A2%AF%E5%BA%A6/">OpenCV-图像梯度</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E4%B8%8A%E7%9A%84%E8%BF%90%E7%AE%97/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/Python_language/with_as/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.872Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          OpenCV-图像几何变换
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/25/OpenCV/OpenCV-Videobase/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Opencv 入门篇学习记录（视频）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/Python_language/with_as/">with as 语法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#OpenCV-%E5%9B%BE%E5%83%8F%E4%B8%8A%E7%9A%84%E8%BF%90%E7%AE%97%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">OpenCV-图像上的运算学习记录</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/Python_language/format/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.849Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/Python_language/format/">python-format</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV%E7%9A%84%E5%9D%91/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.841Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV%E7%9A%84%E5%9D%91/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">OpenCV踩坑记录</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E6%89%8B%E6%9C%BA%E6%8B%8D%E7%85%A7%E5%8F%91%E9%82%AE%E4%BB%B6/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.827Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E6%89%8B%E6%9C%BA%E6%8B%8D%E7%85%A7%E5%8F%91%E9%82%AE%E4%BB%B6/">OpenCV-远程控制手机拍照发邮件</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E6%9F%A5%E6%89%BEHSV%E5%AF%B9%E5%BA%94%E7%9A%84BGR%E5%80%BC/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.807Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E6%9F%A5%E6%89%BEHSV%E5%AF%B9%E5%BA%94%E7%9A%84BGR%E5%80%BC/">OpenCV-查找HSV对应的BGR值</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E6%94%B9%E5%8F%98%E9%A2%9C%E8%89%B2%E7%A9%BA%E9%97%B4/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.792Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E6%94%B9%E5%8F%98%E9%A2%9C%E8%89%B2%E7%A9%BA%E9%97%B4/">OpenCV-改变颜色空间</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E6%89%8B%E5%8A%BF%E8%B0%83%E8%8A%82%E9%9F%B3%E9%87%8F%E5%9F%BA%E7%A1%80%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.782Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E6%89%8B%E5%8A%BF%E8%B0%83%E8%8A%82%E9%9F%B3%E9%87%8F%E5%9F%BA%E7%A1%80%E5%AE%9E%E7%8E%B0/">OpenCV-手势调节音量基础实现</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E6%89%8B%E5%8A%BF%E6%8E%A7%E5%88%B6%E7%94%B5%E8%84%91%E9%9F%B3%E9%87%8F/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.772Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E6%89%8B%E5%8A%BF%E6%8E%A7%E5%88%B6%E7%94%B5%E8%84%91%E9%9F%B3%E9%87%8F/">OpenCV-手势控制电脑音量</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E6%80%A7%E8%83%BD%E8%A1%A1%E9%87%8F%E5%92%8C%E6%8F%90%E5%8D%87%E6%8A%80%E6%9C%AF/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.767Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E6%80%A7%E8%83%BD%E8%A1%A1%E9%87%8F%E5%92%8C%E6%8F%90%E5%8D%87%E6%8A%80%E6%9C%AF/">OpenCV-性能衡量和技术提升</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/">2</a><a class="page-number" href="/archives/2022/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2022/page/5/">5</a><a class="extend next" rel="next" href="/archives/2022/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -465,8 +369,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: ture,

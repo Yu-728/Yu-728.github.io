@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | </title>
+  <title>OpenCV-图像模糊（图像平滑） | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="OpenCV-图像模糊（图像平滑）学习如下：  cv.bulr() cv.GaussianBlur cv.medianBlur cv.bilateralFilter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenCV-图像模糊（图像平滑）">
+<meta property="og:url" content="http://example.com/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E6%A8%A1%E7%B3%8A%EF%BC%88%E5%9B%BE%E5%83%8F%E5%B9%B3%E6%BB%91%EF%BC%89/index.html">
 <meta property="og:site_name">
+<meta property="og:description" content="OpenCV-图像模糊（图像平滑）学习如下：  cv.bulr() cv.GaussianBlur cv.medianBlur cv.bilateralFilter">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-25T10:06:34.712Z">
+<meta property="article:modified_time" content="2022-05-07T09:56:21.826Z">
 <meta property="article:author" content="Yuzzz">
 <meta name="twitter:card" content="summary">
   
@@ -153,295 +157,196 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-OpenCV/OpenCV-图像模糊（图像平滑）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      OpenCV-图像模糊（图像平滑）
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+  <br/>
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+  <span class="icon-sort"></span>
+  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+  </span>
+  </a>
+
+<!--显示阅读次数完毕-->
+
+        
+        <a href="/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E6%A8%A1%E7%B3%8A%EF%BC%88%E5%9B%BE%E5%83%8F%E5%B9%B3%E6%BB%91%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2022-05-25T10:06:34.712Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="OpenCV-图像模糊（图像平滑）"><a href="#OpenCV-图像模糊（图像平滑）" class="headerlink" title="OpenCV-图像模糊（图像平滑）"></a>OpenCV-图像模糊（图像平滑）</h1><p>学习如下：</p>
+<ol>
+<li>cv.bulr()</li>
+<li>cv.GaussianBlur</li>
+<li>cv.medianBlur</li>
+<li>cv.bilateralFilter<span id="more"></span>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">通过将图像与低通滤波器内核进行卷积来实现图像模糊。这对于消除噪音很有用。</span><br><span class="line">它实际上从图像中消除了高频部分（例如噪声，边缘）。</span><br><span class="line">因此，在此操作中边缘有些模糊。（有一些模糊技术也可以不模糊边缘）。</span><br><span class="line">OpenCV主要提供四种类型的模糊技术:</span><br><span class="line">1.平均 2.高斯模糊 3.中位模糊 4.双边滤波</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">import cv2 as cv</span><br><span class="line">import numpy as np</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line"></span><br><span class="line">img = cv.imread(r&#x27;C:\Users\Admin\Desktop\opencv\roi.jpg&#x27;)</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">1.平均</span><br><span class="line">这是通过将图像与归一化框滤镜进行卷积来完成的。它仅获取内核区域下所有像素的平均值，并替换中心元素。</span><br><span class="line">这是通过功能**cv.blur()或**cv.boxFilter()完成的。</span><br><span class="line">检查文档以获取有关内核的更多详细信息。我们应该指定内核的宽度和高度。</span><br><span class="line">3x3归一化框式过滤器如下所示：</span><br><span class="line">K = 1/9[ [1 1 1</span><br><span class="line">          1 1 1</span><br><span class="line">          1 1 1] ]</span><br><span class="line">注意 如果您不想使用标准化的框式过滤器，请使用**cv.boxFilter()**。将参数normalize = False传递给函数。</span><br><span class="line">函数：blur(src, ksize, dst=None, anchor=None, borderType=None):</span><br><span class="line"></span><br><span class="line">.   @param ksize 模糊核大小</span><br><span class="line">.   @param anchor 锚点;默认值Point(-1，-1)表示锚点位于内核中心。</span><br><span class="line">.   @param borderType 边框模式用于推断图像外的像素，参见#BorderTypes。不支持#BORDER_WRAP。</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">blur = cv.blur(img, (5, 5))                     # 平均滤波</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">2.高斯模糊</span><br><span class="line">在这种情况下，代替盒式滤波器，使用了高斯核。</span><br><span class="line">这是通过功能**cv.GaussianBlur()** 完成的。</span><br><span class="line">我们应指定内核的宽度和高度，该宽度和高度应为正数和奇数。</span><br><span class="line">我们还应指定X和Y方向的标准偏差，分别为sigmaX和sigmaY。如果仅指定sigmaX，则将sigmaY与sigmaX相同。</span><br><span class="line">如果两个都为零，则根据内核大小进行计算。高斯模糊对于从图像中去除高斯噪声非常有效。</span><br><span class="line">如果需要，可以使用函数**cv.getGaussianKernel()** 创建高斯内核。</span><br><span class="line">函数： GaussianBlur(src, ksize, sigmaX, dst=None, sigmaY=None, borderType=None):</span><br><span class="line"></span><br><span class="line">.   @param ksize 高斯核的大小。核宽度和核高度可以不同，但都必须是正奇数。或者，它们可以是0。由计算得到。</span><br><span class="line">.   @param sigmaX X方向上的高斯核标准偏差。</span><br><span class="line">.   @param sigmaY Y方向高斯核标准差;如果sigmaY为零，则设为sigmaX，</span><br><span class="line">    如果两个都为零，则高斯核核高和核宽由计算得到，分别(详见#getGaussianKernel);</span><br><span class="line">    为了完全控制结果，而不考虑将来可能对所有这些语义进行的修改，建议指定所有的ksize、sigmaX和sigmaY。</span><br><span class="line">.   @param borderType pixel extrapolation method, see #BorderTypes. #BORDER_WRAP is not supported.</span><br><span class="line">.   </span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">GaussianBlur = cv.GaussianBlur(img, (5, 5), 0)  # 高斯模糊函数</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">3.中位模糊</span><br><span class="line">在这里，函数**cv.medianBlur()** 提取内核区域下所有像素的中值，并将中心元素替换为该中值。</span><br><span class="line">这对于消除图像中的椒盐噪声非常有效。有趣的是，在上述过滤器中，中心元素是新计算的值，该值可以是图像中的像素值或新值。</span><br><span class="line">但是在中值模糊中，中心元素总是被图像中的某些像素值代替。有效降低噪音。其内核大小应为正奇数整数。</span><br><span class="line"></span><br><span class="line">函数： medianBlur(src, ksize, dst=None):</span><br><span class="line">.   @param ksize 孔径线性尺寸;它必须是正奇数且大于1，例如:3,5,7…</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">medianBlur = cv.medianBlur(img, 5)                  # 中位模糊</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">cv.bilateralFilter() 在去除噪声的同时保持边缘清晰锐利非常有效。但是，与其他过滤器相比，该操作速度较慢。</span><br><span class="line">我们已经看到，高斯滤波器采用像素周围的邻域并找到其高斯加权平均值。</span><br><span class="line">高斯滤波器仅是空间的函数，也就是说，滤波时会考虑附近的像素。</span><br><span class="line">它不考虑像素是否具有几乎相同的强度。它不考虑像素是否是边缘像素。因此它也模糊了边缘，这是我们不想做的。</span><br><span class="line">双边滤波器在空间中也采用高斯滤波器，但是又有一个高斯滤波器，它是像素差的函数。</span><br><span class="line">空间的高斯函数确保仅考虑附近像素的模糊，而强度差的高斯函数确保仅考虑强度与中心像素相似的那些像素的模糊。</span><br><span class="line">由于边缘的像素强度变化较大，因此可以保留边缘。</span><br><span class="line"></span><br><span class="line">函数：bilateralFilter(src, d, sigmaColor, sigmaSpace, dst=None, borderType=None):</span><br><span class="line"></span><br><span class="line">.   @param d 滤波期间使用的每个像素邻域的直径。如果非正，则从sigmspace计算。</span><br><span class="line">.   @param sigmaColor 在颜色空间中过滤sigma。该参数的值越大，意味着像素邻域(参见sigmspace)中更远的颜色将被混合在一起，</span><br><span class="line">    从而产生更大的半等色区域。</span><br><span class="line">.   @param sigmaSpace 在坐标空间中过滤。参数值越大，表示距离较远的像素将相互影响，只要它们的颜色足够接近(参见sigmaColor)。</span><br><span class="line">    当d\&gt;0时，它指定邻域大小而不考虑sigmspace。否则，d与sigmspace成比例。</span><br><span class="line">.   @param borderType 边框模式用于推断图像外的像素，参见#BorderTypes</span><br><span class="line"></span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">bilateralFilter = cv.bilateralFilter(img, 9, 75, 75)       # 双边滤波</span><br><span class="line"></span><br><span class="line">cv.imshow(&#x27;img&#x27;, img)</span><br><span class="line">cv.imshow(&#x27;burl&#x27;, blur)</span><br><span class="line">cv.imshow(&#x27;GaussianBlur&#x27;, GaussianBlur)</span><br><span class="line">cv.imshow(&#x27;medianBlur&#x27;, medianBlur)</span><br><span class="line">cv.imshow(&#x27;bilateralFilter&#x27;, bilateralFilter)</span><br><span class="line">key = cv.waitKey()</span><br><span class="line"># 按任意键退出</span><br><span class="line">cv.destroyAllWindows()</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢观看<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E6%A2%AF%E5%BA%A6/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:13:46.434Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E6%A2%AF%E5%BA%A6/">OpenCV-图像梯度</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E6%A8%A1%E7%B3%8A%EF%BC%88%E5%9B%BE%E5%83%8F%E5%B9%B3%E6%BB%91%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/Python_language/with_as/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.872Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E8%BF%87%E6%BB%A4%EF%BC%882D%E5%8D%B7%E7%A7%AF%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          OpenCV-图像过滤（2D卷积）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E5%87%A0%E4%BD%95%E5%8F%98%E6%8D%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">OpenCV-图像几何变换</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/Python_language/with_as/">with as 语法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#OpenCV-%E5%9B%BE%E5%83%8F%E6%A8%A1%E7%B3%8A%EF%BC%88%E5%9B%BE%E5%83%8F%E5%B9%B3%E6%BB%91%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">OpenCV-图像模糊（图像平滑）</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/Python_language/format/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.849Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/Python_language/format/">python-format</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV%E7%9A%84%E5%9D%91/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.841Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV%E7%9A%84%E5%9D%91/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">OpenCV踩坑记录</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E6%89%8B%E6%9C%BA%E6%8B%8D%E7%85%A7%E5%8F%91%E9%82%AE%E4%BB%B6/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.827Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E6%89%8B%E6%9C%BA%E6%8B%8D%E7%85%A7%E5%8F%91%E9%82%AE%E4%BB%B6/">OpenCV-远程控制手机拍照发邮件</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E6%9F%A5%E6%89%BEHSV%E5%AF%B9%E5%BA%94%E7%9A%84BGR%E5%80%BC/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.807Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E6%9F%A5%E6%89%BEHSV%E5%AF%B9%E5%BA%94%E7%9A%84BGR%E5%80%BC/">OpenCV-查找HSV对应的BGR值</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E6%94%B9%E5%8F%98%E9%A2%9C%E8%89%B2%E7%A9%BA%E9%97%B4/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.792Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E6%94%B9%E5%8F%98%E9%A2%9C%E8%89%B2%E7%A9%BA%E9%97%B4/">OpenCV-改变颜色空间</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E6%89%8B%E5%8A%BF%E8%B0%83%E8%8A%82%E9%9F%B3%E9%87%8F%E5%9F%BA%E7%A1%80%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.782Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E6%89%8B%E5%8A%BF%E8%B0%83%E8%8A%82%E9%9F%B3%E9%87%8F%E5%9F%BA%E7%A1%80%E5%AE%9E%E7%8E%B0/">OpenCV-手势调节音量基础实现</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E6%89%8B%E5%8A%BF%E6%8E%A7%E5%88%B6%E7%94%B5%E8%84%91%E9%9F%B3%E9%87%8F/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.772Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E6%89%8B%E5%8A%BF%E6%8E%A7%E5%88%B6%E7%94%B5%E8%84%91%E9%9F%B3%E9%87%8F/">OpenCV-手势控制电脑音量</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/OpenCV/OpenCV-%E6%80%A7%E8%83%BD%E8%A1%A1%E9%87%8F%E5%92%8C%E6%8F%90%E5%8D%87%E6%8A%80%E6%9C%AF/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.767Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/OpenCV/OpenCV-%E6%80%A7%E8%83%BD%E8%A1%A1%E9%87%8F%E5%92%8C%E6%8F%90%E5%8D%87%E6%8A%80%E6%9C%AF/">OpenCV-性能衡量和技术提升</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/">2</a><a class="page-number" href="/archives/2022/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2022/page/5/">5</a><a class="extend next" rel="next" href="/archives/2022/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -465,8 +370,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: ture,

@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hello World | </title>
+  <title>with as 语法 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="with as 语法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2022/05/25/hello-world/index.html">
+<meta property="og:title" content="with as 语法">
+<meta property="og:url" content="http://example.com/2022/05/25/Python_language/with_as/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="with as 语法">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-25T09:51:37.631Z">
-<meta property="article:modified_time" content="2022-05-25T09:41:58.952Z">
+<meta property="article:published_time" content="2022-05-25T10:06:34.872Z">
+<meta property="article:modified_time" content="2022-05-17T07:34:24.798Z">
 <meta property="article:author" content="Yuzzz">
 <meta name="twitter:card" content="summary">
   
@@ -64,7 +64,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 1
+			总文章数 44
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -157,14 +157,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Python_language/with_as" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      with as 语法
     </h1>
   
 
@@ -181,27 +181,22 @@
 <!--显示阅读次数完毕-->
 
         
-        <a href="/2022/05/25/hello-world/" class="archive-article-date">
-  	<time datetime="2022-05-25T09:51:37.631Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
+        <a href="/2022/05/25/Python_language/with_as/" class="archive-article-date">
+  	<time datetime="2022-05-25T10:06:34.872Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="with-as-语法"><a href="#with-as-语法" class="headerlink" title="with as 语法"></a>with as 语法</h1><span id="more"></span>
+<p>执行循序<br>with 执行1 as 变量（执行3）：<br>    执行2</p>
+<p>紧跟with后面的语句被求值后，返回对象的 <em>enter</em>() 方法被调用，这个方法的返回值将被赋值给as后面的变量。<br>当with后面的代码块全部被执行完之后，将调用前面返回对象的 <em>exit</em>()方法。<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># with_example01.py</span><br><span class="line">class Sample:</span><br><span class="line">    def __enter__(self):</span><br><span class="line">        print &quot;In __enter__()&quot;</span><br><span class="line">        return &quot;Foo&quot;</span><br><span class="line">    def __exit__(self, type, value, trace):</span><br><span class="line">        print &quot;In __exit__()&quot;</span><br><span class="line">def get_sample():</span><br><span class="line">    return Sample()</span><br><span class="line">with get_sample() as sample:</span><br><span class="line">    print &quot;sample:&quot;, sample</span><br></pre></td></tr></table></figure>
+<p>结果:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bash-3.2$ ./with_example01.py</span><br><span class="line">In __enter__()</span><br><span class="line">sample: Foo</span><br><span class="line">In __exit__()</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>详见大佬链接<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/bitcarmanlee/article/details/52745676">https://blog.csdn.net/bitcarmanlee/article/details/52745676</a></p>
 
       
 
@@ -281,7 +276,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/25/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/25/Python_language/with_as/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -293,6 +288,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E6%A2%AF%E5%BA%A6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          OpenCV-图像梯度
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/25/Python_language/format/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python-format</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -314,7 +328,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#with-as-%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">with as 语法</span></a></li></ol>
                     </div>
                 </span>
             </div>
