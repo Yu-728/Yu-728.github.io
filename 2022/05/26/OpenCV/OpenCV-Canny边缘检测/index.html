@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>汽车控制模块知识 | </title>
+  <title>Canny边缘检测算法 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="汽车控制模块知识">
+  <meta name="description" content="Canny边缘检测算法基本原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="汽车控制模块知识">
-<meta property="og:url" content="http://example.com/2022/05/25/learning/Car-controlmodel/index.html">
+<meta property="og:title" content="Canny边缘检测算法">
+<meta property="og:url" content="http://example.com/2022/05/26/OpenCV/OpenCV-Canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="汽车控制模块知识">
+<meta property="og:description" content="Canny边缘检测算法基本原理">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-25T10:06:34.422Z">
-<meta property="article:modified_time" content="2022-03-30T01:50:20.488Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20171117094349330?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1bGluemh1bGlubGlu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="https://img-blog.csdn.net/20171117094551248?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1bGluemh1bGlubGlu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="article:published_time" content="2022-05-26T02:47:40.305Z">
+<meta property="article:modified_time" content="2022-05-26T03:12:06.571Z">
 <meta property="article:author" content="Yuzzz">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20171117094349330?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1bGluemh1bGlubGlu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
     <link rel="alternative" href="/atom.xml" title="" type="application/atom+xml">
   
@@ -154,37 +157,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-learning/Car-controlmodel" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-OpenCV/OpenCV-Canny边缘检测" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      汽车控制模块知识
+      Canny边缘检测算法
     </h1>
   
 
         
-        <a href="/2022/05/25/learning/Car-controlmodel/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.422Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
+        <a href="/2022/05/26/OpenCV/OpenCV-Canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/" class="archive-article-date">
+  	<time datetime="2022-05-26T02:47:40.305Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="汽车控制模块知识"><a href="#汽车控制模块知识" class="headerlink" title="汽车控制模块知识"></a>汽车控制模块知识</h1><span id="more"></span>
-<h2 id="一、VCU介绍"><a href="#一、VCU介绍" class="headerlink" title="一、VCU介绍"></a>一、VCU介绍</h2><p>VCU （Vehicle Control Unit）**<font color=#FF0000> 电动汽车整车控制器</font>**，一般仅新能源汽车配备、传统燃油车无需该装置。</p>
-<p>电动汽车整车控制器（ VCU，Vehicle Control Unit ）是电动汽车动力系统的总成控制器，负责协调发动机、驱动电机、变速箱、动力电池等各部件的工作，具有提高车辆的动力性能、安全性能和经济性等作用。</p>
-<p>电动汽车整车控制器 VCU（Vehicle Control Unit ）是电动汽车整车控制系统的核心部件，是用来控制电动车电机的启动、运行、进退、速度、停止以及电动车的其它电子器件的核心控制器件。 VCU作为纯电动汽车控制系统最核心的部件， 其承担了数据交换、 安全管理、驾驶员意图解释、能量流管理的任务。</p>
-<p>VCU采集电机控制系统信号、加速踏板信号、制动踏板信号及其他部件信号，根据驾驶员的驾驶意图综合分析并作出响应判断后， 监控下层的各部件控制器的动作， 对汽车的正常行驶、 电池能量的制动回馈、网络管理、 故障诊断与处理、车辆状态监控等功能起着关键作用</p>
-<h2 id="二、ECU"><a href="#二、ECU" class="headerlink" title="二、ECU"></a>二、ECU</h2><p>ECU （Electronic Control Unit ）电子控制单元，**<font color=#FF0000> 燃油车整车控制器</font>**<br>ECU（Electronic Control Unit ）电子控制单元，又称“行车电脑”、“车载电脑”等。</p>
-<p>从用途上讲则是汽车专用微机控制器。它和普通的电脑一样 , 由微处理器（ CPU）、存储器（ROM、、 RAM）、输入 / 输出接口（ I/O ）、模数转换器（ A/D）以及整形、驱动等大规模集成电路组成。用一句简单的话来形容就是“ ECU就是汽车的大脑”。</p>
-<p>ECU控制发动机的进气量，喷油量，点火时间等，从而决定引擎运转效率和功率、扭力等。</p>
-<p>发动机工作在各种转速、档位、负荷、温度等条件时‘所对应’的进气量，喷油量，点火时间等信息，以数据库方式记录在ECU中，这个数据库称为“M.A.P.”。刷ECU的实质就是修改这个“M.A.P.”—数据库。改变控制发动机的数据，影响发动机的运转，在引擎可承受范围内，达到所需要的效果。</p>
-<h2 id="三、HCU"><a href="#三、HCU" class="headerlink" title="三、HCU"></a>三、HCU</h2><p>HCU（ Hybrid Control Unit ）**<font color=#FF0000>混合动力整车控制器</font>**<br>HCU是ABS执行机构，一般由增压阀（常开阀）、减压阀（常闭阀）、回液泵、储能器组成。增压阀和减压阀受控于 ECU 信号， 实现液路的开关， 从而实现常规、保压、减压、增压的制动过程。 电动泵由柱塞式油泵和驱动电机组成， 主要作用是将蓄能器内的制动液保持一定的压力。</p>
-<p>HCU 作为整个混合动力系统的主控制器，承担了整个系统的能量分配、扭矩管理、错误诊断等功能。</p>
+        <h1 id="Canny边缘检测算法基本原理"><a href="#Canny边缘检测算法基本原理" class="headerlink" title="Canny边缘检测算法基本原理"></a>Canny边缘检测算法基本原理</h1><span id="more"></span>
+<ol>
+<li>图像灰度化</li>
+<li>高斯滤波</li>
+<li>用一阶偏导的有限差分来计算梯度的幅值和方向</li>
+<li>对梯度幅值进行非极大值抑制</li>
+<li>用双阈值算法检测和连接边缘</li>
+</ol>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/likezhaobin/article/details/6892176?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2-6892176-blog-117639872.pc_relevant_antiscanv3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2-6892176-blog-117639872.pc_relevant_antiscanv3&utm_relevant_index=5">参考文档</a></p>
+<h1 id="OpenCV中的实现"><a href="#OpenCV中的实现" class="headerlink" title="OpenCV中的实现"></a>OpenCV中的实现</h1><p>代码实现：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">Canny边缘检测的概念 - OpenCV函数: cv.Canny()</span><br><span class="line">Canny算法</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">import numpy as np</span><br><span class="line">import cv2 as cv</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line"></span><br><span class="line">img = cv.imread(r&#x27;C:\Users\admin\Desktop\OpenCV\people.jpg&#x27;, 0)</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">Canny(image, threshold1, threshold2, edges=None, apertureSize=None, L2gradient=None):</span><br><span class="line">.   @param image 8-bit input image.</span><br><span class="line">.   @param edges output edge map; single channels 8-bit image, which has the same size as image.</span><br><span class="line">.   @param threshold1 first threshold for the hysteresis procedure.(minVal)</span><br><span class="line">.   @param threshold2 second threshold for the hysteresis procedure.(maxVal, &gt;maxVal ---&gt; 255)</span><br><span class="line">.   @param apertureSize aperture size for the Sobel operator.</span><br><span class="line">.   @param L2gradient a flag, indicating whether a more accurate \f$L_2\f$ norm\f$=\sqrt&#123;(dI/dx)^2 + (dI/dy)^2&#125;\f$</span><br><span class="line">    should be used to calculate the image gradient magnitude (L2gradient=true ), </span><br><span class="line">    or whether the default \f$L_1\f$ norm \f$=|dI/dx|+|dI/dy|\f$ is enough (L2gradient=false ).</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">edges = cv.Canny(img, 50, 60)</span><br><span class="line">plt.subplot(121), plt.imshow(img, cmap=&#x27;gray&#x27;)</span><br><span class="line">plt.title(&#x27;Original Image&#x27;), plt.xticks([]), plt.yticks([])</span><br><span class="line">plt.subplot(122), plt.imshow(edges, cmap=&#x27;gray&#x27;)</span><br><span class="line">plt.title(&#x27;Edge Image&#x27;), plt.xticks([]), plt.yticks([])</span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Soble算子计算梯度"><a href="#Soble算子计算梯度" class="headerlink" title="Soble算子计算梯度"></a>Soble算子计算梯度</h2><p>sobel算子主要用于获得数字图像的一阶梯度，常见的应用和物理意义是边缘检测。<br>原理：<br>算子使用两个3<em>3的矩阵（图1）算子使用两个3</em>3的矩阵（图1）去和原始图片作卷积，分别得到横向Ｇ（ｘ）和纵向Ｇ（ｙ）的梯度值，如果梯度值大于某一个阈值，则认为该点为边缘点</p>
+<p>Gx方向的相关模板：<br><img src="https://img-blog.csdn.net/20171117094349330?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1bGluemh1bGlubGlu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="图1"></p>
+<p>Gy方向的相关模板：<br><img src="https://img-blog.csdn.net/20171117094551248?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemh1bGluemh1bGlubGlu/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="图2"></p>
 
       
 
@@ -264,7 +270,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/25/learning/Car-controlmodel/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/26/OpenCV/OpenCV-Canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -278,18 +284,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/05/25/learning/CAN_DataAnalysis/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/05/26/numpy/numpy%E9%99%8D%E7%BB%B4%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CAN总线的数据解析
+          numpy降维方法
         
       </div>
     </a>
   
   
-    <a href="/2022/05/25/learning/BODAS-Using/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">BODAS的使用记录</div>
+    <a href="/2022/05/25/OpenCV/OpenCV-%E5%9B%BE%E5%83%8F%E6%A2%AF%E5%BA%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">OpenCV-图像梯度</div>
       <i class="icon-circle-right"></i>
     </a>
   

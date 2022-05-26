@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>汽车控制模块知识 | </title>
+  <title>numpy降维方法 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="汽车控制模块知识">
+  <meta name="description" content="numpy中的降维方法numpy中的降维方法：flat（）：返回一个iterator，然后去遍历flatten（）：将多维数组拉平，并拷贝一份ravel（）：将多维数组拉平（一维）squeeze（）：除去多维数组中，维数为1的维度，如315降维后3*5reshape（-1）：多维数组，拉平reshape（-1，5），其中-1表示我们不用亲自去指定这一维度的大小，理解为n维 代码示例： 123456">
 <meta property="og:type" content="article">
-<meta property="og:title" content="汽车控制模块知识">
-<meta property="og:url" content="http://example.com/2022/05/25/learning/Car-controlmodel/index.html">
+<meta property="og:title" content="numpy降维方法">
+<meta property="og:url" content="http://example.com/2022/05/26/numpy/numpy%E9%99%8D%E7%BB%B4%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="汽车控制模块知识">
+<meta property="og:description" content="numpy中的降维方法numpy中的降维方法：flat（）：返回一个iterator，然后去遍历flatten（）：将多维数组拉平，并拷贝一份ravel（）：将多维数组拉平（一维）squeeze（）：除去多维数组中，维数为1的维度，如315降维后3*5reshape（-1）：多维数组，拉平reshape（-1，5），其中-1表示我们不用亲自去指定这一维度的大小，理解为n维 代码示例： 123456">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-25T10:06:34.422Z">
-<meta property="article:modified_time" content="2022-03-30T01:50:20.488Z">
+<meta property="article:published_time" content="2022-05-26T07:40:45.201Z">
+<meta property="article:modified_time" content="2022-05-26T07:42:39.552Z">
 <meta property="article:author" content="Yuzzz">
 <meta name="twitter:card" content="summary">
   
@@ -154,37 +154,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-learning/Car-controlmodel" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-numpy/numpy降维方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      汽车控制模块知识
+      numpy降维方法
     </h1>
   
 
         
-        <a href="/2022/05/25/learning/Car-controlmodel/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.422Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
+        <a href="/2022/05/26/numpy/numpy%E9%99%8D%E7%BB%B4%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2022-05-26T07:40:45.201Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="汽车控制模块知识"><a href="#汽车控制模块知识" class="headerlink" title="汽车控制模块知识"></a>汽车控制模块知识</h1><span id="more"></span>
-<h2 id="一、VCU介绍"><a href="#一、VCU介绍" class="headerlink" title="一、VCU介绍"></a>一、VCU介绍</h2><p>VCU （Vehicle Control Unit）**<font color=#FF0000> 电动汽车整车控制器</font>**，一般仅新能源汽车配备、传统燃油车无需该装置。</p>
-<p>电动汽车整车控制器（ VCU，Vehicle Control Unit ）是电动汽车动力系统的总成控制器，负责协调发动机、驱动电机、变速箱、动力电池等各部件的工作，具有提高车辆的动力性能、安全性能和经济性等作用。</p>
-<p>电动汽车整车控制器 VCU（Vehicle Control Unit ）是电动汽车整车控制系统的核心部件，是用来控制电动车电机的启动、运行、进退、速度、停止以及电动车的其它电子器件的核心控制器件。 VCU作为纯电动汽车控制系统最核心的部件， 其承担了数据交换、 安全管理、驾驶员意图解释、能量流管理的任务。</p>
-<p>VCU采集电机控制系统信号、加速踏板信号、制动踏板信号及其他部件信号，根据驾驶员的驾驶意图综合分析并作出响应判断后， 监控下层的各部件控制器的动作， 对汽车的正常行驶、 电池能量的制动回馈、网络管理、 故障诊断与处理、车辆状态监控等功能起着关键作用</p>
-<h2 id="二、ECU"><a href="#二、ECU" class="headerlink" title="二、ECU"></a>二、ECU</h2><p>ECU （Electronic Control Unit ）电子控制单元，**<font color=#FF0000> 燃油车整车控制器</font>**<br>ECU（Electronic Control Unit ）电子控制单元，又称“行车电脑”、“车载电脑”等。</p>
-<p>从用途上讲则是汽车专用微机控制器。它和普通的电脑一样 , 由微处理器（ CPU）、存储器（ROM、、 RAM）、输入 / 输出接口（ I/O ）、模数转换器（ A/D）以及整形、驱动等大规模集成电路组成。用一句简单的话来形容就是“ ECU就是汽车的大脑”。</p>
-<p>ECU控制发动机的进气量，喷油量，点火时间等，从而决定引擎运转效率和功率、扭力等。</p>
-<p>发动机工作在各种转速、档位、负荷、温度等条件时‘所对应’的进气量，喷油量，点火时间等信息，以数据库方式记录在ECU中，这个数据库称为“M.A.P.”。刷ECU的实质就是修改这个“M.A.P.”—数据库。改变控制发动机的数据，影响发动机的运转，在引擎可承受范围内，达到所需要的效果。</p>
-<h2 id="三、HCU"><a href="#三、HCU" class="headerlink" title="三、HCU"></a>三、HCU</h2><p>HCU（ Hybrid Control Unit ）**<font color=#FF0000>混合动力整车控制器</font>**<br>HCU是ABS执行机构，一般由增压阀（常开阀）、减压阀（常闭阀）、回液泵、储能器组成。增压阀和减压阀受控于 ECU 信号， 实现液路的开关， 从而实现常规、保压、减压、增压的制动过程。 电动泵由柱塞式油泵和驱动电机组成， 主要作用是将蓄能器内的制动液保持一定的压力。</p>
-<p>HCU 作为整个混合动力系统的主控制器，承担了整个系统的能量分配、扭矩管理、错误诊断等功能。</p>
+        <h1 id="numpy中的降维方法"><a href="#numpy中的降维方法" class="headerlink" title="numpy中的降维方法"></a>numpy中的降维方法</h1><p>numpy中的降维方法：<br>flat（）：返回一个iterator，然后去遍历<br>flatten（）：将多维数组拉平，并拷贝一份<br>ravel（）：将多维数组拉平（一维）<br>squeeze（）：除去多维数组中，维数为1的维度，如315降维后3*5<br>reshape（-1）：多维数组，拉平<br>reshape（-1，5），其中-1表示我们不用亲自去指定这一维度的大小，理解为n维</p>
+<p>代码示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">a = np.array([[1, 2, 3], [4, 5, 6]])</span><br><span class="line"></span><br><span class="line">c = []</span><br><span class="line">for x in a.flat:</span><br><span class="line">    c.append(x)</span><br><span class="line">print(&#x27;flat迭代器降一维：\n&#x27;, c)</span><br><span class="line">d = a.flatten()</span><br><span class="line">print(&#x27;flatten方法降一维：\n&#x27;, d)</span><br><span class="line">e = a.ravel()</span><br><span class="line">print(&#x27;ravel方法降一维：\n&#x27;, e)</span><br><span class="line">g = np.squeeze(a)</span><br><span class="line">print(&#x27;squeeze方法降一维：\n&#x27;, g)</span><br><span class="line">f = a.reshape(-1)</span><br><span class="line">print(&#x27;reshape方法降一维：\n&#x27;, f)</span><br><span class="line">a.resize((1, 6))</span><br><span class="line">print(&#x27;resize方法：\n&#x27;, a)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>结果：<br>flat迭代器降一维：<br> [1, 2, 3, 4, 5, 6]<br>flatten方法降一维：<br> [1 2 3 4 5 6]<br>ravel方法降一维：<br> [1 2 3 4 5 6]<br>squeeze方法降一维：<br> [[1 2 3]<br> [4 5 6]]<br>reshape方法降一维：<br> [1 2 3 4 5 6]<br>resize方法：<br> [[1 2 3 4 5 6]]</p>
 
       
 
@@ -264,7 +257,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/25/learning/Car-controlmodel/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/26/numpy/numpy%E9%99%8D%E7%BB%B4%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -278,18 +271,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/05/25/learning/CAN_DataAnalysis/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/05/26/OpenCV/OpenCV-ORC%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CAN总线的数据解析
+          OpenCV-ORC手写数字识别
         
       </div>
     </a>
   
   
-    <a href="/2022/05/25/learning/BODAS-Using/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">BODAS的使用记录</div>
+    <a href="/2022/05/26/OpenCV/OpenCV-Canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Canny边缘检测算法</div>
       <i class="icon-circle-right"></i>
     </a>
   
