@@ -168,6 +168,7 @@
     </h1>
   
 
+        
         <!--显示阅读次数-->
         
           <br/>
@@ -179,6 +180,7 @@
           </a>
         
         <!--显示阅读次数完毕-->
+
         
         <a href="/2022/05/25/OpenCV/OpenCV-Videobase/" class="archive-article-date">
   	<time datetime="2022-05-25T10:06:34.661Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
@@ -194,6 +196,8 @@
 
 <h2 id="视频保存"><a href="#视频保存" class="headerlink" title="视频保存"></a>视频保存</h2><p>代码如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import cv2 as cv</span><br><span class="line">cap = cv.VideoCapture(0)</span><br><span class="line"># 定义编解码器并创建VideoWriter对象</span><br><span class="line">fourcc = cv.VideoWriter_fourcc(*&#x27;XVID&#x27;)</span><br><span class="line"># 保存视频文件</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">out = cv2.VideoWriter(filename,fourcc, fps, frameSize)</span><br><span class="line">参数：</span><br><span class="line">filename：视频保存的位置</span><br><span class="line">fourcc：指定视频编解码器的4字节代码</span><br><span class="line">fps：帧率</span><br><span class="line">frameSize：帧大小</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">out = cv.VideoWriter(&#x27;output.avi&#x27;, fourcc, 20.0, (640,  480))</span><br><span class="line">while cap.isOpened():</span><br><span class="line">    ret, frame = cap.read()</span><br><span class="line">    if not ret:</span><br><span class="line">        print(&quot;Can&#x27;t receive frame (stream end?). Exiting ...&quot;)</span><br><span class="line">        break</span><br><span class="line">    frame = cv.flip(frame, 1)</span><br><span class="line">    # 写翻转的框架</span><br><span class="line">    out.write(frame)</span><br><span class="line">    cv.imshow(&#x27;frame&#x27;, frame)</span><br><span class="line">    if cv.waitKey(1) == ord(&#x27;q&#x27;):</span><br><span class="line">        break</span><br><span class="line"># 完成工作后释放所有内容</span><br><span class="line">cap.release()</span><br><span class="line">out.release()</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+      
+
       
 
       

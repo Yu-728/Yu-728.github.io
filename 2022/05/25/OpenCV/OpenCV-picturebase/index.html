@@ -168,6 +168,7 @@
     </h1>
   
 
+        
         <!--显示阅读次数-->
         
           <br/>
@@ -179,6 +180,7 @@
           </a>
         
         <!--显示阅读次数完毕-->
+
         
         <a href="/2022/05/25/OpenCV/OpenCV-picturebase/" class="archive-article-date">
   	<time datetime="2022-05-25T10:06:34.639Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
@@ -194,6 +196,8 @@
 
 <h2 id="OpenCV画图方法"><a href="#OpenCV画图方法" class="headerlink" title="OpenCV画图方法"></a>OpenCV画图方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import cv2 as cv</span><br><span class="line"></span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">opencv常用画图方法</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line"></span><br><span class="line"># 创建黑色的图像</span><br><span class="line">img = np.zeros((512, 512, 3), np.uint8)</span><br><span class="line"># 绘制一条厚度为5的蓝色对角线</span><br><span class="line">#       窗口图像名 起点坐标   终点坐标   RGB颜色（蓝色）线宽</span><br><span class="line">cv.line(img, (0, 0), (511, 511), (255, 0, 0), 5)</span><br><span class="line">#           窗口图像名   起点       终点        RGB颜色（绿色） 线宽</span><br><span class="line">cv.rectangle(img, (384, 0), (510, 128), (0, 255, 0), 3)  # 画法为左上往右下的对角线所形成的矩形</span><br><span class="line">#               圆心       半径   RGB       是否填充</span><br><span class="line">cv.circle(img, (447, 63), 63, (0, 0, 255), 2)  # -1：填充，其他值不填充，作为线宽参数，默认线宽为1</span><br><span class="line"># 绘制多边形</span><br><span class="line">pts = np.array([[10, 5], [20, 30], [70, 20], [50, 10]], np.int32)</span><br><span class="line"># pts = pts.reshape((-1, 1, 2))</span><br><span class="line"># ture:为封闭图形 False:为多段折线，首尾那段不连接</span><br><span class="line">cv.polylines(img, [pts], True, (0, 255, 255))</span><br><span class="line"># 绘制文字</span><br><span class="line"># 字体设置</span><br><span class="line">font = cv.FONT_HERSHEY_SIMPLEX</span><br><span class="line"># 绘制函数 绘制窗口名 绘制内容  起始位置 字体设置 字体大小比例  RGB 绘制线条粗细程度 线性  图像数据原点True为左下角，否则左上角(默认)</span><br><span class="line">cv.putText(img, &#x27;OpenCV&#x27;, (10, 500), font, 4, (255, 255, 255), 2, cv.LINE_AA)</span><br><span class="line"></span><br><span class="line"># 查看图像</span><br><span class="line">cv.imshow(&#x27;image&#x27;, img)</span><br><span class="line">k = cv.waitKey(0)</span><br><span class="line">if k == 27:  # 等待ESC退出</span><br><span class="line">    cv.destroyAllWindows()</span><br><span class="line">elif k == ord(&#x27;s&#x27;):  # 等待关键字，保存和退出</span><br><span class="line">    cv.imwrite(r&quot;C:\Users\Admin\Desktop\opencv\draw-001.jpg&quot;, img)</span><br><span class="line">    cv.destroyAllWindows()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+
+      
 
       
 

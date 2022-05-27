@@ -170,6 +170,7 @@
     </h1>
   
 
+        
         <!--显示阅读次数-->
         
           <br/>
@@ -181,6 +182,7 @@
           </a>
         
         <!--显示阅读次数完毕-->
+
         
         <a href="/2022/05/25/learning/SAE_J1939/" class="archive-article-date">
   	<time datetime="2022-05-25T10:06:34.511Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
@@ -202,6 +204,8 @@
 <p>PS：PDU特定，它的定义取决于PDU的格式，如下图所示<br><img src="https://img-blog.csdnimg.cn/2021070710460688.jpg#pic_center" alt="PDU"><br>目标地址用DA标识，全局目标地址（255）要求所有设备作为消息响应者做出监听和响应。<br>SA：源地址（知道这帧数据是从那个ECU发出的）</p>
 <h1 id="三、PGN"><a href="#三、PGN" class="headerlink" title="三、PGN"></a>三、PGN</h1><p>PGN:参数群编号<br>把相同参数放到同一个组中，PGN就是编号，知道PGN就知道这个数据单元包传输了什么数据<br><em><strong>PGN = PF + PS</strong></em><br>将PGN转为十进制 —— 查J1939-71标准，找到PGN的数据进行数据分解 —— 将数据段数据根据对应的<strong>SPN</strong>进行分解，分别找到每个<strong>SPN</strong>的解释 —— 根据每个<strong>SPN</strong>的分辨率、偏移量计算实际物理值。</p>
 <h1 id="四、SPN"><a href="#四、SPN" class="headerlink" title="四、SPN"></a>四、SPN</h1><p>SPN，特定参数，它就是用来表示具体的物理参数。比如SPN190=发动机转速、SPN513=实际发动机-转矩百分比。<br><strong>一个SPN码代表了一个物理参数。</strong><br>PGN所代表的的参数组，就是由一个个的SPN组成的。<br>例如PGN 61444=发送机控制器参数组，这个参数组里面包含了发动机转矩模式、驾驶员需求发动机-转矩百分比、实际发动机-转矩百分比、发动机转速等。即PGN 61444=SPN 899+SPN 512+SPN 513+SPN 190…<br>每个帧中数据的部分就是SPN的实际数据，假设PGN所代表的的参数组是由2个SPN构成的，第一个SPN为2字节，第二个SPN为3字节，那么这个帧数据的大小就是5字节</p>
+
+      
 
       
 

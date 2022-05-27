@@ -170,6 +170,7 @@
     </h1>
   
 
+        
         <!--显示阅读次数-->
         
           <br/>
@@ -181,6 +182,7 @@
           </a>
         
         <!--显示阅读次数完毕-->
+
         
         <a href="/2022/05/25/esp32-weather/esp32_WiFi/" class="archive-article-date">
   	<time datetime="2022-05-25T10:06:34.382Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
@@ -194,6 +196,8 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;Arduino.h&gt;</span><br><span class="line">#include &quot;WiFi.h</span><br><span class="line"></span><br><span class="line">// ----WIFI连接信息-----//</span><br><span class="line">const char* ssid = &quot;写你WIFI的名字&quot;; //wifi nane</span><br><span class="line">const char* password = &quot;Wifi密码&quot;; // wifi password</span><br><span class="line"></span><br><span class="line">//这里我把WIFi这个功能封装成一个函数了</span><br><span class="line">//WiFi connect function</span><br><span class="line">void WiFi_Connect()&#123;</span><br><span class="line"></span><br><span class="line">    WiFi.begin(ssid, password);</span><br><span class="line">    </span><br><span class="line">    while (WiFi.status() != WL_CONNECTED)&#123;  //Connection state judgment</span><br><span class="line">        delay(1000);</span><br><span class="line">        Serial.println(&quot;Connecting to WiFi...&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    Serial.println(&quot;Connected to the WiFi network&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void setup()&#123;</span><br><span class="line">    Serial.begin(115200); //设置波特率，在platformio.ini文件里加上 monitor_speed = 115200</span><br><span class="line">    WiFi_Connect();</span><br><span class="line">    delay(500);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void loop()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&quot;</span><br></pre></td></tr></table></figure>
 
 <h4 id="然后我们就可以在手机看到板子了（我这里是手机开热点）"><a href="#然后我们就可以在手机看到板子了（我这里是手机开热点）" class="headerlink" title="然后我们就可以在手机看到板子了（我这里是手机开热点）"></a>然后我们就可以在手机看到板子了（我这里是手机开热点）</h4><p><img src="https://i.niupic.com/images/2022/03/18/9WHT.jpg" alt="手机查看WIFI连接设备"></p>
+
+      
 
       
 

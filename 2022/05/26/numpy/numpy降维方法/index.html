@@ -168,6 +168,7 @@
     </h1>
   
 
+        
         <!--显示阅读次数-->
         
           <br/>
@@ -179,6 +180,7 @@
           </a>
         
         <!--显示阅读次数完毕-->
+
         
         <a href="/2022/05/26/numpy/numpy%E9%99%8D%E7%BB%B4%E6%96%B9%E6%B3%95/" class="archive-article-date">
   	<time datetime="2022-05-26T07:40:45.201Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-26</time>
@@ -192,6 +194,8 @@
 <p>代码示例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">a = np.array([[1, 2, 3], [4, 5, 6]])</span><br><span class="line"></span><br><span class="line">c = []</span><br><span class="line">for x in a.flat:</span><br><span class="line">    c.append(x)</span><br><span class="line">print(&#x27;flat迭代器降一维：\n&#x27;, c)</span><br><span class="line">d = a.flatten()</span><br><span class="line">print(&#x27;flatten方法降一维：\n&#x27;, d)</span><br><span class="line">e = a.ravel()</span><br><span class="line">print(&#x27;ravel方法降一维：\n&#x27;, e)</span><br><span class="line">g = np.squeeze(a)</span><br><span class="line">print(&#x27;squeeze方法降一维：\n&#x27;, g)</span><br><span class="line">f = a.reshape(-1)</span><br><span class="line">print(&#x27;reshape方法降一维：\n&#x27;, f)</span><br><span class="line">a.resize((1, 6))</span><br><span class="line">print(&#x27;resize方法：\n&#x27;, a)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>结果：<br>flat迭代器降一维：<br> [1, 2, 3, 4, 5, 6]<br>flatten方法降一维：<br> [1 2 3 4 5 6]<br>ravel方法降一维：<br> [1 2 3 4 5 6]<br>squeeze方法降一维：<br> [[1 2 3]<br> [4 5 6]]<br>reshape方法降一维：<br> [1 2 3 4 5 6]<br>resize方法：<br> [[1 2 3 4 5 6]]</p>
+
+      
 
       
 
