@@ -252,13 +252,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <span id="more"></span>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用YOLOv5前我们首先要配置它的相关环境，网上有很多教程，这里我放一个我学的<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/GenuineMonster/article/details/116604556">教程链接</a></p>
-<h1 id="一、下载相关IDE"><a href="#一、下载相关IDE" class="headerlink" title="一、下载相关IDE"></a>一、下载相关IDE</h1><p>这里推荐大家下载Anaconda<br>我自己使用的是pycharm，在使用YOLO的时候感觉比anaconda复杂了不少。<br>虽然pycharm也有jupyter的插件，但是还是推荐大家安装Anaconda可以省去安装很多第三方库的步骤。<br>非要和我一样头铁使用pychram也行就是麻烦了些，记得在pycharm中的库安装更改成镜像源就行。</p>
-<h1 id="二、pytroch下载与安装"><a href="#二、pytroch下载与安装" class="headerlink" title="二、pytroch下载与安装"></a>二、pytroch下载与安装</h1><p>首先取pytorch的<a target="_blank" rel="noopener" href="https://pytorch.org/get-started/locally/">官网</a>，官网会根据你的电脑推荐你下载对应的pytorch版本。<br>最重要的是会告诉你应该安装什么版本的<strong>CUDA</strong><br>这里你别着急取下载，放着这个页面，先去下载CUDA和cudnn。<br><img src="https://s3.bmp.ovh/imgs/2022/05/31/776c95c991a39f3c.jpg" alt="插图"><br><strong>PS：</strong> 我这里使用的是<strong>pip</strong>安装，因为我是用的pycharm<br>如果你用的是Anaconda这里选择<strong>Conda</strong>安装<br>还有CUDA10.2 pytorch 已经不支持了，所以一般都是CUDA11.3，我们在下载的时候就选择CUDA11.3就好了</p>
-<h1 id="三、CUDA和cudnn下载"><a href="#三、CUDA和cudnn下载" class="headerlink" title="三、CUDA和cudnn下载"></a>三、CUDA和cudnn下载</h1><p>这里直接根据上边教程取下载就行，不赘述。</p>
-<h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p>根据推荐的教程进行。</p>
-
+        <h1 id="YOLOv5配置环境"><a href="#YOLOv5配置环境" class="headerlink" title="YOLOv5配置环境"></a>YOLOv5配置环境</h1>
+        
+          <a class="article-more-a" href="/2022/05/31/YOLOv5/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/#more">more >></a>
+        
       
 
       
@@ -471,11 +468,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="numpy中的降维方法"><a href="#numpy中的降维方法" class="headerlink" title="numpy中的降维方法"></a>numpy中的降维方法</h1><p>numpy中的降维方法：<br>flat（）：返回一个iterator，然后去遍历<br>flatten（）：将多维数组拉平，并拷贝一份<br>ravel（）：将多维数组拉平（一维）<br>squeeze（）：除去多维数组中，维数为1的维度，如315降维后3*5<br>reshape（-1）：多维数组，拉平<br>reshape（-1，5），其中-1表示我们不用亲自去指定这一维度的大小，理解为n维</p>
-<p>代码示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">a = np.array([[1, 2, 3], [4, 5, 6]])</span><br><span class="line"></span><br><span class="line">c = []</span><br><span class="line">for x in a.flat:</span><br><span class="line">    c.append(x)</span><br><span class="line">print(&#x27;flat迭代器降一维：\n&#x27;, c)</span><br><span class="line">d = a.flatten()</span><br><span class="line">print(&#x27;flatten方法降一维：\n&#x27;, d)</span><br><span class="line">e = a.ravel()</span><br><span class="line">print(&#x27;ravel方法降一维：\n&#x27;, e)</span><br><span class="line">g = np.squeeze(a)</span><br><span class="line">print(&#x27;squeeze方法降一维：\n&#x27;, g)</span><br><span class="line">f = a.reshape(-1)</span><br><span class="line">print(&#x27;reshape方法降一维：\n&#x27;, f)</span><br><span class="line">a.resize((1, 6))</span><br><span class="line">print(&#x27;resize方法：\n&#x27;, a)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>结果：<br>flat迭代器降一维：<br> [1, 2, 3, 4, 5, 6]<br>flatten方法降一维：<br> [1 2 3 4 5 6]<br>ravel方法降一维：<br> [1 2 3 4 5 6]<br>squeeze方法降一维：<br> [[1 2 3]<br> [4 5 6]]<br>reshape方法降一维：<br> [1 2 3 4 5 6]<br>resize方法：<br> [[1 2 3 4 5 6]]</p>
-
+        <h1 id="numpy中的降维方法"><a href="#numpy中的降维方法" class="headerlink" title="numpy中的降维方法"></a>numpy中的降维方法</h1>
+        
+          <a class="article-more-a" href="/2022/05/26/numpy/numpy%E9%99%8D%E7%BB%B4%E6%96%B9%E6%B3%95/#more">more >></a>
+        
       
 
       

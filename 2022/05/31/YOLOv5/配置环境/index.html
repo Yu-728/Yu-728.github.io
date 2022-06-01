@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>YOLOv5配置环境 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言在使用YOLOv5前我们首先要配置它的相关环境，网上有很多教程，这里我放一个我学的教程链接 一、下载相关IDE这里推荐大家下载Anaconda我自己使用的是pycharm，在使用YOLO的时候感觉比anaconda复杂了不少。虽然pycharm也有jupyter的插件，但是还是推荐大家安装Anaconda可以省去安装很多第三方库的步骤。非要和我一样头铁使用pychram也行就是麻烦了些，记得">
+  <meta name="description" content="YOLOv5配置环境">
 <meta property="og:type" content="article">
 <meta property="og:title" content="YOLOv5配置环境">
 <meta property="og:url" content="http://example.com/2022/05/31/YOLOv5/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="前言在使用YOLOv5前我们首先要配置它的相关环境，网上有很多教程，这里我放一个我学的教程链接 一、下载相关IDE这里推荐大家下载Anaconda我自己使用的是pycharm，在使用YOLO的时候感觉比anaconda复杂了不少。虽然pycharm也有jupyter的插件，但是还是推荐大家安装Anaconda可以省去安装很多第三方库的步骤。非要和我一样头铁使用pychram也行就是麻烦了些，记得">
+<meta property="og:description" content="YOLOv5配置环境">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/05/31/776c95c991a39f3c.jpg">
 <meta property="article:published_time" content="2022-05-31T08:02:53.706Z">
-<meta property="article:modified_time" content="2022-05-31T08:22:38.357Z">
+<meta property="article:modified_time" content="2022-06-01T08:41:39.288Z">
 <meta property="article:author" content="Yuzzz">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/05/31/776c95c991a39f3c.jpg">
@@ -192,7 +192,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <span id="more"></span>
+        <h1 id="YOLOv5配置环境"><a href="#YOLOv5配置环境" class="headerlink" title="YOLOv5配置环境"></a>YOLOv5配置环境</h1><span id="more"></span>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用YOLOv5前我们首先要配置它的相关环境，网上有很多教程，这里我放一个我学的<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/GenuineMonster/article/details/116604556">教程链接</a></p>
 <h1 id="一、下载相关IDE"><a href="#一、下载相关IDE" class="headerlink" title="一、下载相关IDE"></a>一、下载相关IDE</h1><p>这里推荐大家下载Anaconda<br>我自己使用的是pycharm，在使用YOLO的时候感觉比anaconda复杂了不少。<br>虽然pycharm也有jupyter的插件，但是还是推荐大家安装Anaconda可以省去安装很多第三方库的步骤。<br>非要和我一样头铁使用pychram也行就是麻烦了些，记得在pycharm中的库安装更改成镜像源就行。</p>
 <h1 id="二、pytroch下载与安装"><a href="#二、pytroch下载与安装" class="headerlink" title="二、pytroch下载与安装"></a>二、pytroch下载与安装</h1><p>首先取pytorch的<a target="_blank" rel="noopener" href="https://pytorch.org/get-started/locally/">官网</a>，官网会根据你的电脑推荐你下载对应的pytorch版本。<br>最重要的是会告诉你应该安装什么版本的<strong>CUDA</strong><br>这里你别着急取下载，放着这个页面，先去下载CUDA和cudnn。<br><img src="https://s3.bmp.ovh/imgs/2022/05/31/776c95c991a39f3c.jpg" alt="插图"><br><strong>PS：</strong> 我这里使用的是<strong>pip</strong>安装，因为我是用的pycharm<br>如果你用的是Anaconda这里选择<strong>Conda</strong>安装<br>还有CUDA10.2 pytorch 已经不支持了，所以一般都是CUDA11.3，我们在下载的时候就选择CUDA11.3就好了</p>
@@ -331,7 +331,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%8B%E8%BD%BD%E7%9B%B8%E5%85%B3IDE"><span class="toc-number">2.</span> <span class="toc-text">一、下载相关IDE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81pytroch%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">二、pytroch下载与安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81CUDA%E5%92%8Ccudnn%E4%B8%8B%E8%BD%BD"><span class="toc-number">4.</span> <span class="toc-text">三、CUDA和cudnn下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E7%BB%AD"><span class="toc-number">5.</span> <span class="toc-text">后续</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#YOLOv5%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">YOLOv5配置环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%8B%E8%BD%BD%E7%9B%B8%E5%85%B3IDE"><span class="toc-number">3.</span> <span class="toc-text">一、下载相关IDE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81pytroch%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-number">4.</span> <span class="toc-text">二、pytroch下载与安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81CUDA%E5%92%8Ccudnn%E4%B8%8B%E8%BD%BD"><span class="toc-number">5.</span> <span class="toc-text">三、CUDA和cudnn下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E7%BB%AD"><span class="toc-number">6.</span> <span class="toc-text">后续</span></a></li></ol>
                     </div>
                 </span>
             </div>
