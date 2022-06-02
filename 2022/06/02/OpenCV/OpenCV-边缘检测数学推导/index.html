@@ -6,21 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>线性插值 np.interp() | </title>
+  <title>图像梯度算子推导（laplacian算子） | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="线性插值 np.interp()">
+  <meta name="description" content="图像梯度理解参考链接：图像梯度理解1图像梯度理解2图像梯度理解3 数学推理一阶导数定义： 二阶导数定义： 在数字图像处理中，像素点是离散的，并且最小的间距为1，也就是相邻像素之间距离为1，所以Δx最趋近于0的取值是1，即Δx &#x3D; 1所以推出：由(1)(2)和(4)(5)得出： 将 x&#x3D;x+1 、x&#x3D;x-1 分别代入(1)然后再代入二阶导的公式得出： 我们看到(9)和(10)都是二阶导，但是他们相差">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性插值 np.interp()">
-<meta property="og:url" content="http://example.com/2022/05/25/numpy/interp/index.html">
+<meta property="og:title" content="图像梯度算子推导（laplacian算子）">
+<meta property="og:url" content="http://example.com/2022/06/02/OpenCV/OpenCV-%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="线性插值 np.interp()">
+<meta property="og:description" content="图像梯度理解参考链接：图像梯度理解1图像梯度理解2图像梯度理解3 数学推理一阶导数定义： 二阶导数定义： 在数字图像处理中，像素点是离散的，并且最小的间距为1，也就是相邻像素之间距离为1，所以Δx最趋近于0的取值是1，即Δx &#x3D; 1所以推出：由(1)(2)和(4)(5)得出： 将 x&#x3D;x+1 、x&#x3D;x-1 分别代入(1)然后再代入二阶导的公式得出： 我们看到(9)和(10)都是二阶导，但是他们相差">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/05/16/6932d4620da7d251.jpg">
-<meta property="article:published_time" content="2022-05-25T10:06:34.561Z">
-<meta property="article:modified_time" content="2022-05-16T03:17:22.258Z">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/02/20066692cad13396.jpg">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/02/c33ba615e88030e9.jpg">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/02/645338e2d28015d4.jpg">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/02/fa5e5e987d69b1c6.jpg">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/02/7bc33b621e053118.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2022/06/02/a0fu.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2022/06/02/a0fy.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2022/06/02/a0fz.jpg">
+<meta property="article:published_time" content="2022-06-02T06:02:39.190Z">
+<meta property="article:modified_time" content="2022-06-02T07:29:02.548Z">
 <meta property="article:author" content="Yuzzz">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/05/16/6932d4620da7d251.jpg">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/06/02/20066692cad13396.jpg">
   
     <link rel="alternative" href="/atom.xml" title="" type="application/atom+xml">
   
@@ -159,14 +166,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-numpy/interp" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-OpenCV/OpenCV-边缘检测数学推导" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      线性插值 np.interp()
+      图像梯度算子推导（laplacian算子）
     </h1>
   
 
@@ -184,27 +191,21 @@
         <!--显示阅读次数完毕-->
 
         
-        <a href="/2022/05/25/numpy/interp/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.561Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
+        <a href="/2022/06/02/OpenCV/OpenCV-%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC/" class="archive-article-date">
+  	<time datetime="2022-06-02T06:02:39.190Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="线性插值-np-interp"><a href="#线性插值-np-interp" class="headerlink" title="线性插值 np.interp()"></a>线性插值 np.interp()</h1><span id="more"></span>
-<p>函数：y = np.interp(x, xp, fp, left, right, period)</p>
-<p>单调增加样本点的一维线性插值</p>
-<p>将一维分段线性插值返回给具有给定离散数据点 (xp, fp) 的函数，在 x 处求值。</p>
-<p>x: 所求位置的x坐标值</p>
-<p>xp:离散点的x坐标值范围</p>
-<p>fp:离散点的y坐标值范围</p>
-<p>left:当索引超出[xp,fp]时的左侧值（x&lt;xp时在x位置的取值）</p>
-<p>right:当索引超出[xp,fp]时的右侧值（y&gt;fp时在x位置的取值）</p>
-<p>period:</p>
-<p>Examples<br>    ——–<br>    &gt;&gt;&gt; xp = [1, 2, 3]<br>    &gt;&gt;&gt; fp = [3, 2, 0]<br>    &gt;&gt;&gt; np.interp(2.5, xp, fp)<br>    1.0</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">line_len = 50 # line_len 的取值范围30~190</span><br><span class="line">min_volume = 0</span><br><span class="line">max_volume = 100</span><br><span class="line"> vol = np.interp(line_len, [30, 190], [min_volume, max_volume])</span><br></pre></td></tr></table></figure>
-<p><img src="https://s3.bmp.ovh/imgs/2022/05/16/6932d4620da7d251.jpg" alt="示例"></p>
+        <h1 id="图像梯度理解"><a href="#图像梯度理解" class="headerlink" title="图像梯度理解"></a>图像梯度理解</h1><p>参考链接：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36622009/article/details/102900447">图像梯度理解1</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/saltriver/article/details/78987096">图像梯度理解2</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011754972/article/details/121783295?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-5-121783295-blog-77775029.pc_relevant_default&spm=1001.2101.3001.4242.4&utm_relevant_index=8">图像梯度理解3</a></p>
+<h1 id="数学推理"><a href="#数学推理" class="headerlink" title="数学推理"></a>数学推理</h1><p>一阶导数定义：<br><img src="https://s3.bmp.ovh/imgs/2022/06/02/20066692cad13396.jpg" alt="一阶导数"></p>
+<p>二阶导数定义：<br><img src="https://s3.bmp.ovh/imgs/2022/06/02/c33ba615e88030e9.jpg" alt="二阶导数"></p>
+<p>在数字图像处理中，像素点是离散的，并且最小的间距为1，也就是相邻像素之间距离为1，所以Δx最趋近于0的取值是1，即Δx = 1<br>所以推出：<br><img src="https://s3.bmp.ovh/imgs/2022/06/02/645338e2d28015d4.jpg" alt="一阶导1"><br><img src="https://s3.bmp.ovh/imgs/2022/06/02/fa5e5e987d69b1c6.jpg" alt="二阶导1"><br>由(1)(2)和(4)(5)得出：<br><img src="https://s3.bmp.ovh/imgs/2022/06/02/7bc33b621e053118.jpg"><br><img src="https://i.niupic.com/images/2022/06/02/a0fu.jpg"></p>
+<p>将 x=x+1 、x=x-1 分别代入(1)然后再代入二阶导的公式得出：<br><img src="https://i.niupic.com/images/2022/06/02/a0fy.jpg"><br><img src="https://i.niupic.com/images/2022/06/02/a0fz.jpg"></p>
+<p>我们看到(9)和(10)都是二阶导，但是他们相差2倍的关系。我们的目的是找到边缘，边缘就是该像素位置的一阶导(方向导数)最大或者说梯度(因为方向导数模最大的方向就是梯度方向)，要使得一阶导最大(即取极值)，就要求二阶导等于0时，所以，这个系数并不影响。而二阶导为0，就是公式(10)等于0。<br>二阶导为0时，是极值，既可以极大值，也可以极小值，极小值就是像素值为0了。如果一张图的非细节部分的像素全为100的话，那么非细节部分像素的二阶导也为0。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011754972/article/details/121783295?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-5-121783295-blog-77775029.pc_relevant_default&spm=1001.2101.3001.4242.4&utm_relevant_index=8">参考链接</a></p>
 
       
 
@@ -286,7 +287,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/25/numpy/interp/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/06/02/OpenCV/OpenCV-%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +301,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/05/25/numpy/%E6%95%B0%E7%BB%84%E5%8F%96%E6%95%B4%E5%88%97%E5%85%83%E7%B4%A0%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Python中的X[:,0]和X[:,1]
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/05/25/numpy/ravel/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">numpy-ravle()</div>
+    <a href="/2022/06/01/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E5%B0%8F%E9%A1%B9%E7%9B%AE/%E4%BA%BA%E5%83%8F%E8%AF%86%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">pytorch + opencv + YOLov5 实现人像识别</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -338,7 +330,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC-np-interp"><span class="toc-number">1.</span> <span class="toc-text">线性插值 np.interp()</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E6%A2%AF%E5%BA%A6%E7%90%86%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">图像梯度理解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%8E%A8%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">数学推理</span></a></li></ol>
                     </div>
                 </span>
             </div>
