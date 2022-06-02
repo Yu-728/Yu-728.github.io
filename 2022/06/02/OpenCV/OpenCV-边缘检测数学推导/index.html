@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>图像梯度算子推导（laplacian算子） | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="图像梯度理解参考链接：图像梯度理解1图像梯度理解2图像梯度理解3 数学推理一阶导数定义： 二阶导数定义： 在数字图像处理中，像素点是离散的，并且最小的间距为1，也就是相邻像素之间距离为1，所以Δx最趋近于0的取值是1，即Δx &#x3D; 1所以推出：由(1)(2)和(4)(5)得出： 将 x&#x3D;x+1 、x&#x3D;x-1 分别代入(1)然后再代入二阶导的公式得出： 我们看到(9)和(10)都是二阶导，但是他们相差">
+  <meta name="description" content="图像梯度理解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图像梯度算子推导（laplacian算子）">
 <meta property="og:url" content="http://example.com/2022/06/02/OpenCV/OpenCV-%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="图像梯度理解参考链接：图像梯度理解1图像梯度理解2图像梯度理解3 数学推理一阶导数定义： 二阶导数定义： 在数字图像处理中，像素点是离散的，并且最小的间距为1，也就是相邻像素之间距离为1，所以Δx最趋近于0的取值是1，即Δx &#x3D; 1所以推出：由(1)(2)和(4)(5)得出： 将 x&#x3D;x+1 、x&#x3D;x-1 分别代入(1)然后再代入二阶导的公式得出： 我们看到(9)和(10)都是二阶导，但是他们相差">
+<meta property="og:description" content="图像梯度理解">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/02/20066692cad13396.jpg">
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/02/c33ba615e88030e9.jpg">
@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://i.niupic.com/images/2022/06/02/a0fy.jpg">
 <meta property="og:image" content="https://i.niupic.com/images/2022/06/02/a0fz.jpg">
 <meta property="article:published_time" content="2022-06-02T06:02:39.190Z">
-<meta property="article:modified_time" content="2022-06-02T07:29:02.548Z">
+<meta property="article:modified_time" content="2022-06-02T09:16:21.579Z">
 <meta property="article:author" content="Yuzzz">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/06/02/20066692cad13396.jpg">
@@ -199,7 +199,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="图像梯度理解"><a href="#图像梯度理解" class="headerlink" title="图像梯度理解"></a>图像梯度理解</h1><p>参考链接：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36622009/article/details/102900447">图像梯度理解1</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/saltriver/article/details/78987096">图像梯度理解2</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011754972/article/details/121783295?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-5-121783295-blog-77775029.pc_relevant_default&spm=1001.2101.3001.4242.4&utm_relevant_index=8">图像梯度理解3</a></p>
+        <h1 id="图像梯度理解"><a href="#图像梯度理解" class="headerlink" title="图像梯度理解"></a>图像梯度理解</h1><span id="more"></span>
+<p>参考链接：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36622009/article/details/102900447">图像梯度理解1</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/saltriver/article/details/78987096">图像梯度理解2</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011754972/article/details/121783295?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-5-121783295-blog-77775029.pc_relevant_default&spm=1001.2101.3001.4242.4&utm_relevant_index=8">图像梯度理解3</a></p>
 <h1 id="数学推理"><a href="#数学推理" class="headerlink" title="数学推理"></a>数学推理</h1><p>一阶导数定义：<br><img src="https://s3.bmp.ovh/imgs/2022/06/02/20066692cad13396.jpg" alt="一阶导数"></p>
 <p>二阶导数定义：<br><img src="https://s3.bmp.ovh/imgs/2022/06/02/c33ba615e88030e9.jpg" alt="二阶导数"></p>
 <p>在数字图像处理中，像素点是离散的，并且最小的间距为1，也就是相邻像素之间距离为1，所以Δx最趋近于0的取值是1，即Δx = 1<br>所以推出：<br><img src="https://s3.bmp.ovh/imgs/2022/06/02/645338e2d28015d4.jpg" alt="一阶导1"><br><img src="https://s3.bmp.ovh/imgs/2022/06/02/fa5e5e987d69b1c6.jpg" alt="二阶导1"><br>由(1)(2)和(4)(5)得出：<br><img src="https://s3.bmp.ovh/imgs/2022/06/02/7bc33b621e053118.jpg"><br><img src="https://i.niupic.com/images/2022/06/02/a0fu.jpg"></p>
