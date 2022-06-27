@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>IP摄像头实现远程目标检测 | </title>
+  <title>CANoe官方教程学习笔记 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="硬件准备">
+  <meta name="description" content="CANoe官方教程学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IP摄像头实现远程目标检测">
-<meta property="og:url" content="http://example.com/2022/06/20/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E5%B0%8F%E9%A1%B9%E7%9B%AE/IP%E6%91%84%E5%83%8F%E5%A4%B4%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/index.html">
+<meta property="og:title" content="CANoe官方教程学习笔记">
+<meta property="og:url" content="http://example.com/2022/06/21/CANoe%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/CANoe%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="硬件准备">
+<meta property="og:description" content="CANoe官方教程学习笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.niupic.com/images/2022/06/20/a0B1.jpg">
-<meta property="og:image" content="https://i.niupic.com/images/2022/06/20/a0B2.jpg">
-<meta property="article:published_time" content="2022-06-20T09:33:16.962Z">
-<meta property="article:modified_time" content="2022-06-20T09:43:07.865Z">
+<meta property="article:published_time" content="2022-06-21T07:25:24.308Z">
+<meta property="article:modified_time" content="2022-06-21T07:37:26.156Z">
 <meta property="article:author" content="Yuzzz">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.niupic.com/images/2022/06/20/a0B1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="" type="application/atom+xml">
   
@@ -67,7 +64,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 61
+			总文章数 65
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -160,14 +157,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-目标检测小项目/IP摄像头实现远程目标检测" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-CANoe学习笔记/CANoe学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      IP摄像头实现远程目标检测
+      CANoe官方教程学习笔记
     </h1>
   
 
@@ -185,20 +182,16 @@
         <!--显示阅读次数完毕-->
 
         
-        <a href="/2022/06/20/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E5%B0%8F%E9%A1%B9%E7%9B%AE/IP%E6%91%84%E5%83%8F%E5%A4%B4%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" class="archive-article-date">
-  	<time datetime="2022-06-20T09:33:16.962Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-20</time>
+        <a href="/2022/06/21/CANoe%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/CANoe%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2022-06-21T07:25:24.308Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="硬件准备"><a href="#硬件准备" class="headerlink" title="硬件准备"></a>硬件准备</h1><span id="more"></span>
-<p>不用的手机，或者esp32_CAM、电脑<br>实现思路：<br>摄像头负责采集图像传送到云端<br>电脑获取云端视频流，在PC端对视频进行图像处理。<br>然后将处理结果反馈给摄像头终端（未实现）</p>
-<h1 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h1><p>Python 3.9、Pycharm、OpenCV、pytorch、手机安装IP摄像头软件</p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><p>以下只是使用手机IP摄像头的代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">import torch</span><br><span class="line">import cv2 as cv</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class MultipleTarget:</span><br><span class="line"></span><br><span class="line">    def __init__(self, url):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        初始化</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        # 加载训练模型</span><br><span class="line">        self.model = torch.hub.load(&#x27;./yolov5&#x27;, &#x27;custom&#x27;, path=&#x27;./weight/yolov5s.pt&#x27;, source=&#x27;local&#x27;)</span><br><span class="line">        # 设置阈值</span><br><span class="line">        self.model.conf = 0.52  # confidence threshold (0-1)</span><br><span class="line">        self.model.iou = 0.45  # NMS IoU threshold (0-1)</span><br><span class="line">        # 加载摄像头</span><br><span class="line">        self.url = url</span><br><span class="line">        self.cap = cv.VideoCapture(self.url)</span><br><span class="line">        if not self.cap.isOpened():</span><br><span class="line">            print(&quot;Cannot open camera&quot;)</span><br><span class="line">            exit()</span><br><span class="line"></span><br><span class="line">    def draw(self, list_temp, image_temp):</span><br><span class="line">        for temp in list_temp:</span><br><span class="line">            name = temp[6]  # 取出标签名</span><br><span class="line">            temp = temp[:4].astype(&#x27;int&#x27;)  # 转成int加快计算</span><br><span class="line">            cv.rectangle(image_temp, (temp[0], temp[1]), (temp[2], temp[3]), (0, 0, 255), 3)  # 框出识别物体</span><br><span class="line">            cv.putText(image_temp, name, (int(temp[0] - 10), int(temp[1] - 10)), cv.FONT_ITALIC, 1, (0, 255, 0), 2)</span><br><span class="line"></span><br><span class="line">    def detect(self):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        目标检测</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        while True:</span><br><span class="line">            ret, frame = self.cap.read()</span><br><span class="line">            # 如果正确读取帧，ret为True</span><br><span class="line">            if not ret:</span><br><span class="line">                print(&quot;Can&#x27;t receive frame (stream end?). Exiting ...&quot;)</span><br><span class="line">                break</span><br><span class="line">            frame = cv.flip(frame, 1)</span><br><span class="line"></span><br><span class="line">            # FPS计算time.start</span><br><span class="line">            start_time = time.time()</span><br><span class="line"></span><br><span class="line">            # Inference</span><br><span class="line">            results = self.model(frame)</span><br><span class="line">            pd = results.pandas().xyxy[0]  # tensor--&gt;pandas的DataFrame</span><br><span class="line">            # 取出对应标签的list</span><br><span class="line">            person_list = pd[pd[&#x27;name&#x27;] == &#x27;person&#x27;].to_numpy()</span><br><span class="line">            bus_list = pd[pd[&#x27;name&#x27;] == &#x27;bus&#x27;].to_numpy()</span><br><span class="line">            # 框出物体</span><br><span class="line">            self.draw(person_list, frame)</span><br><span class="line">            self.draw(bus_list, frame)</span><br><span class="line">            # end_time</span><br><span class="line">            end_time = time.time()</span><br><span class="line">            fps = 1 / (end_time - start_time)</span><br><span class="line"></span><br><span class="line">            # 控制台显示</span><br><span class="line">            # results.print()  # or .show(), .save(), .crop(), .pandas(), etc.</span><br><span class="line">            # print(results.xyxy[0])  # img1 predictions (tensor)</span><br><span class="line">            # print(&#x27;----------------&#x27;)</span><br><span class="line">            # print(results.pandas().xyxy[0])  # img1 predictions (pandas)</span><br><span class="line"></span><br><span class="line">            # FPS显示</span><br><span class="line">            cv.putText(frame, &#x27;FPS:&#x27; + str(int(fps)), (30, 50), cv.FONT_ITALIC, 1, (0, 255, 0), 2)</span><br><span class="line"></span><br><span class="line">            cv.imshow(&#x27;results&#x27;, frame)</span><br><span class="line">            cv.waitKey(10)</span><br><span class="line">            if cv.waitKey(10) &amp; 0xFF == ord(&#x27;q&#x27;):</span><br><span class="line">                break</span><br><span class="line"></span><br><span class="line">        self.cap.release()</span><br><span class="line">        cv.destroyAllWindows()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">url = &#x27;rtsp://admin:admin@192.168.43.229:8554/live&#x27;</span><br><span class="line">test = MultipleTarget(url)</span><br><span class="line">test.detect()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img src="https://i.niupic.com/images/2022/06/20/a0B1.jpg"><br><img src="https://i.niupic.com/images/2022/06/20/a0B2.jpg"></p>
+        <h1 id="CANoe官方教程学习笔记"><a href="#CANoe官方教程学习笔记" class="headerlink" title="CANoe官方教程学习笔记"></a>CANoe官方教程学习笔记</h1><span id="more"></span>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是大佬的学习笔记我这里是转载，也是为了便于我以后查看。大佬只写了部分，如果后续有机会我会续写这个笔记<br>大佬笔记链接：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39199083/article/details/119849874">CANoe学习笔记(1) 新建工程及通道配置步骤图解</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39199083/article/details/119850946">CANoe学习笔记(2) Trace窗口介绍图解</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39199083/article/details/119854539">CANoe学习笔记(3) Graphic窗口介绍图解</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39199083/article/details/119857703">CANoe学习笔记(6) logging Block数据记录模块图解</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39199083/article/details/119856986">CANoe学习笔记(9) 发送模块CAN IG图解</a></p>
 
       
 
@@ -280,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/06/20/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E5%B0%8F%E9%A1%B9%E7%9B%AE/IP%E6%91%84%E5%83%8F%E5%A4%B4%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/06/21/CANoe%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/CANoe%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,9 +287,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2022/06/27/ESP32CAM/%E4%BD%BF%E7%94%A8ESP32CAM%E8%AF%BB%E5%8F%96%E8%A7%86%E9%A2%91%E6%B5%81/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ESP32CAM读取视频
+        
+      </div>
+    </a>
   
-    <a href="/2022/06/20/OpenCV/%E8%A7%A3%E6%9E%90rtsp%E8%A7%86%E9%A2%91%E6%B5%81/OpenCV%E8%A7%A3%E6%9E%90IP%E6%91%84%E5%83%8F%E5%A4%B4%E8%A7%86%E9%A2%91%E6%B5%81/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+  
+    <a href="/2022/06/20/IP%E6%91%84%E5%83%8F%E5%A4%B4rstp%E6%B5%81/IP%E6%91%84%E5%83%8F%E5%A4%B4%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IP摄像头实现远程目标检测</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -323,7 +325,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E5%87%86%E5%A4%87"><span class="toc-number">1.</span> <span class="toc-text">硬件准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%87%86%E5%A4%87"><span class="toc-number">2.</span> <span class="toc-text">软件准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-number">4.</span> <span class="toc-text">结果</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CANoe%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">CANoe官方教程学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
