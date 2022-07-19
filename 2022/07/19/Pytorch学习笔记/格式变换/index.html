@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>汽车控制模块知识 | </title>
+  <title>Pytorch学习笔记-数据格式变换 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="汽车控制模块知识">
+  <meta name="description" content="学习笔记和实现代码详见如下：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="汽车控制模块知识">
-<meta property="og:url" content="http://example.com/2022/05/25/learning/Car-controlmodel/index.html">
+<meta property="og:title" content="Pytorch学习笔记-数据格式变换">
+<meta property="og:url" content="http://example.com/2022/07/19/Pytorch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A0%BC%E5%BC%8F%E5%8F%98%E6%8D%A2/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="汽车控制模块知识">
+<meta property="og:description" content="学习笔记和实现代码详见如下：">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-25T10:06:34.422Z">
-<meta property="article:modified_time" content="2022-03-30T01:50:20.488Z">
+<meta property="article:published_time" content="2022-07-19T08:51:41.204Z">
+<meta property="article:modified_time" content="2022-07-19T09:03:18.841Z">
 <meta property="article:author" content="Yuzzz">
 <meta name="twitter:card" content="summary">
   
@@ -157,14 +157,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-learning/Car-controlmodel" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Pytorch学习笔记/格式变换" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      汽车控制模块知识
+      Pytorch学习笔记-数据格式变换
     </h1>
   
 
@@ -182,25 +182,16 @@
         <!--显示阅读次数完毕-->
 
         
-        <a href="/2022/05/25/learning/Car-controlmodel/" class="archive-article-date">
-  	<time datetime="2022-05-25T10:06:34.422Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
+        <a href="/2022/07/19/Pytorch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A0%BC%E5%BC%8F%E5%8F%98%E6%8D%A2/" class="archive-article-date">
+  	<time datetime="2022-07-19T08:51:41.204Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="汽车控制模块知识"><a href="#汽车控制模块知识" class="headerlink" title="汽车控制模块知识"></a>汽车控制模块知识</h1><span id="more"></span>
-<h2 id="一、VCU介绍"><a href="#一、VCU介绍" class="headerlink" title="一、VCU介绍"></a>一、VCU介绍</h2><p>VCU （Vehicle Control Unit）**<font color=#FF0000> 电动汽车整车控制器</font>**，一般仅新能源汽车配备、传统燃油车无需该装置。</p>
-<p>电动汽车整车控制器（ VCU，Vehicle Control Unit ）是电动汽车动力系统的总成控制器，负责协调发动机、驱动电机、变速箱、动力电池等各部件的工作，具有提高车辆的动力性能、安全性能和经济性等作用。</p>
-<p>电动汽车整车控制器 VCU（Vehicle Control Unit ）是电动汽车整车控制系统的核心部件，是用来控制电动车电机的启动、运行、进退、速度、停止以及电动车的其它电子器件的核心控制器件。 VCU作为纯电动汽车控制系统最核心的部件， 其承担了数据交换、 安全管理、驾驶员意图解释、能量流管理的任务。</p>
-<p>VCU采集电机控制系统信号、加速踏板信号、制动踏板信号及其他部件信号，根据驾驶员的驾驶意图综合分析并作出响应判断后， 监控下层的各部件控制器的动作， 对汽车的正常行驶、 电池能量的制动回馈、网络管理、 故障诊断与处理、车辆状态监控等功能起着关键作用</p>
-<h2 id="二、ECU"><a href="#二、ECU" class="headerlink" title="二、ECU"></a>二、ECU</h2><p>ECU （Electronic Control Unit ）电子控制单元，**<font color=#FF0000> 燃油车整车控制器</font>**<br>ECU（Electronic Control Unit ）电子控制单元，又称“行车电脑”、“车载电脑”等。</p>
-<p>从用途上讲则是汽车专用微机控制器。它和普通的电脑一样 , 由微处理器（ CPU）、存储器（ROM、、 RAM）、输入 / 输出接口（ I/O ）、模数转换器（ A/D）以及整形、驱动等大规模集成电路组成。用一句简单的话来形容就是“ ECU就是汽车的大脑”。</p>
-<p>ECU控制发动机的进气量，喷油量，点火时间等，从而决定引擎运转效率和功率、扭力等。</p>
-<p>发动机工作在各种转速、档位、负荷、温度等条件时‘所对应’的进气量，喷油量，点火时间等信息，以数据库方式记录在ECU中，这个数据库称为“M.A.P.”。刷ECU的实质就是修改这个“M.A.P.”—数据库。改变控制发动机的数据，影响发动机的运转，在引擎可承受范围内，达到所需要的效果。</p>
-<h2 id="三、HCU"><a href="#三、HCU" class="headerlink" title="三、HCU"></a>三、HCU</h2><p>HCU（ Hybrid Control Unit ）**<font color=#FF0000>混合动力整车控制器</font>**<br>HCU是ABS执行机构，一般由增压阀（常开阀）、减压阀（常闭阀）、回液泵、储能器组成。增压阀和减压阀受控于 ECU 信号， 实现液路的开关， 从而实现常规、保压、减压、增压的制动过程。 电动泵由柱塞式油泵和驱动电机组成， 主要作用是将蓄能器内的制动液保持一定的压力。</p>
-<p>HCU 作为整个混合动力系统的主控制器，承担了整个系统的能量分配、扭矩管理、错误诊断等功能。</p>
+        <h1 id="学习笔记和实现代码详见如下："><a href="#学习笔记和实现代码详见如下：" class="headerlink" title="学习笔记和实现代码详见如下："></a>学习笔记和实现代码详见如下：</h1><span id="more"></span>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import torch</span><br><span class="line">from torchvision import datasets</span><br><span class="line">from torchvision.transforms import ToTensor, Lambda</span><br><span class="line"></span><br><span class="line">ds = datasets.FashionMNIST(</span><br><span class="line">    root=&quot;data&quot;,</span><br><span class="line">    train=True,</span><br><span class="line">    download=True,</span><br><span class="line">    transform=ToTensor(),</span><br><span class="line">    target_transform=Lambda(lambda y: torch.zeros(10, dtype=torch.float).scatter_(0, torch.tensor(y), value=1))</span><br><span class="line">)</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">ToTensor将PIL image或NumPy ndarray转换为FloatTensor。并将图像像素强度值缩放到[0.,1.)</span><br><span class="line"></span><br><span class="line">Lambda转换应用任何用户定义的Lambda函数。</span><br><span class="line">这里，我们定义了一个函数来将整数转换为一个单热编码张量。</span><br><span class="line">它首先创建一个大小为10的零张量(数据集中标签的数量)，并调用scatter_，它在标签y给出的索引上赋值为1。</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
 
@@ -282,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/25/learning/Car-controlmodel/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/07/19/Pytorch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A0%BC%E5%BC%8F%E5%8F%98%E6%8D%A2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -296,18 +287,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/05/25/learning/CAN_DataAnalysis/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CAN总线的数据解析
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/05/25/learning/BODAS-Using/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">BODAS的使用记录</div>
+    <a href="/2022/07/19/Pytorch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E9%9B%86%E5%BB%BA%E7%AB%8B%E5%92%8C%E5%AF%BC%E5%85%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pytorch学习笔记-数据集建立和导入</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -334,7 +316,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B1%BD%E8%BD%A6%E6%8E%A7%E5%88%B6%E6%A8%A1%E5%9D%97%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">汽车控制模块知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81VCU%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">一、VCU介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81ECU"><span class="toc-number">1.2.</span> <span class="toc-text">二、ECU</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81HCU"><span class="toc-number">1.3.</span> <span class="toc-text">三、HCU</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%92%8C%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%81%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">学习笔记和实现代码详见如下：</span></a></li></ol>
                     </div>
                 </span>
             </div>
